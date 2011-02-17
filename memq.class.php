@@ -45,7 +45,7 @@
 				if(($id = $mem->increment($queue."_head")) === FALSE) 
 					return FALSE;
 			
-				if($id <= $tail) {
+				if(($id-1) <= $tail) {
 					return $mem->get($queue."_".($id-1));
 				}
 				else {
